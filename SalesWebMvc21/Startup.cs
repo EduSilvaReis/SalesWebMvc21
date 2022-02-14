@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SalesWebMvc21.Data;
 
 namespace SalesWebMvc21
 {
@@ -33,6 +35,9 @@ namespace SalesWebMvc21
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<SalesWebMvc21Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMvc21Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
