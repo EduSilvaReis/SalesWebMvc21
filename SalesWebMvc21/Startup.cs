@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc21.Data;
+using SalesWebMvc21.Services;
 
 namespace SalesWebMvc21
 {
@@ -41,6 +42,7 @@ namespace SalesWebMvc21
                         builder.MigrationsAssembly("SalesWebMvc21")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
