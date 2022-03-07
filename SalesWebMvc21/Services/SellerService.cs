@@ -33,7 +33,7 @@ namespace SalesWebMvc21.Services
         {
             return await _context.Seller.Include(obj=>obj.Department).FirstOrDefaultAsync(obj => obj.Id == id);
         }
-        public async  Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace SalesWebMvc21.Services
                 _context.Seller.Remove(obj);
                 await _context.SaveChangesAsync();
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException)
             {
                 throw new IntegrityException("Can't delete seller because he/she has sales");
             }

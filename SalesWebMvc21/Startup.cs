@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
 using SalesWebMvc21.Data;
 using SalesWebMvc21.Services;
+using SalesWebMvc21.Models;
 
 namespace SalesWebMvc21
 {
@@ -46,6 +47,7 @@ namespace SalesWebMvc21
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentService>();
+            services.AddScoped<SalesRecordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
